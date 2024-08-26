@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix India - Watch TV Shows Online, Watch Movies Online</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            padding: 20px 0;
+            position: absolute;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 200px;
+        }
+
+        .sign-in-button {
+            background-color: #e50914;
+            color: #fff;
+            padding: 7px 17apx;
+            font-size: 16px;
+            border-radius: 3px;
+            text-decoration: none;
+        }
+
+        .hero {
+            background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/93da5c27-be66-427c-8b72-5cb39d275279/94eb5ad7-10d8-4cca-bf45-ac52e0a052c0/IN-en-20240226-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-form {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .cta-input {
+            width: 100%;
+            max-width: 450px;
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .cta-button {
+            background-color: #e50914;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .feature {
+            border-top: 8px solid #222;
+            padding: 50px 0;
+        }
+
+        .feature-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .feature-text {
+            width: 50%;
+        }
+
+        .feature h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature p {
+            font-size: 1.5rem;
+        }
+
+        .feature-media {
+            width: 50%;
+            position: relative;
+        }
+
+        .feature-media img {
+            width: 100%;
+        }
+
+        .video-container {
+            position: absolute;
+            top: 20%;
+            left: 13%;
+            width: 73%;
+            height: 54%;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .faq {
+            border-top: 8px solid #222;
+            padding: 50px 0;
+        }
+
+        .faq h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .faq-item {
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            background-color: #303030;
+            color: #fff;
+            padding: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+        }
+
+        footer {
+            border-top: 8px solid #222;
+            padding: 50px 0;
+            color: #757575;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: #757575;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .feature-content {
+                flex-direction: column;
+            }
+
+            .feature-text, .feature-media {
+                width: 100%;
+            }
+
+            .footer-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-form {
+                flex-direction: column;
+            }
+
+            .cta-input, .cta-button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <img src="https://assets.nflxext.com/en_us/layout/ecweb/common/logo-shadow2x.png" alt="Netflix" class="logo">
+            <a href="#" class="sign-in-button">Sign In</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1><b>Unlimited movies,</b></h1>
+                <h1><b>TV shows and more</b></h1>
+                <p>Watch anywhere. Cancel anytime.</p>
+                <p>Ready to watch? Enter your email to create or restart your membership.</p>
+                <form class="cta-form">
+                    <input type="email" placeholder="Email address" class="cta-input" required>
+                    <button type="submit" class="cta-button">Get Started &gt;</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="feature">
+            <div class="container feature-content">
+                <div class="feature-text">
+                    <h2>Enjoy on your TV</h2>
+                    <p>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+                </div>
+                <div class="feature-media">
+                    <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="TV">
+                    <div class="video-container">
+                        <video autoplay playsinline muted loop>
+                            <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature">
+            <div class="container feature-content">
+                <div class="feature-media">
+                    <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" alt="Mobile">
+                </div>
+                <div class="feature-text">
+                    <h2>Download your shows to watch offline</h2>
+                    <p>Save your favourites easily and always have something to watch.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature">
+            <div class="container feature-content">
+                <div class="feature-text">
+                    <h2>Watch everywhere</h2>
+                    <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+                </div>
+                <div class="feature-media">
+                    <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png" alt="Devices">
+                    <div class="video-container">
+                        <video autoplay playsinline muted loop>
+                            <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature">
+            <div class="container feature-content">
+                <div class="feature-media">
+                    <img src="https://occ-0-2590-2186.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABVr8nYuAg0xDpXDv0VI9HUoH7r2aGp4TKRCsKNQrMwxzTtr-NlwOHeS8bCI2oeZddmu3nMYr3j9MjYhHyjBASb1FaOGYZNYvPBCL.png?r=54d" alt="Kids">
+                </div>
+                <div class="feature-text">
+                    <h2>Create profiles for kids</h2>
+                    <p>Send children on adventures with their favourite characters in a space made just for them—free with your membership.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">What is Netflix?</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How much does Netflix cost?</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Where can I watch?</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I cancel?</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What can I watch on Netflix?</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Is Netflix good for kids?</div>
+                    </div>
+                </div>
+                <p>Ready to watch? Enter your email to create or restart your membership.</p>
+                <form class="cta-form">
+                    <input type="email" placeholder="Email address" class="cta-input" required>
+                    <button type="submit" class="cta-button">Get Started &gt;</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Questions? Call 000-800-919-1694</p>
+            <div class="footer-links">
+                <a href="#">FAQ</a>
+                <a href="#">Help Centre</a>
+                <a href="#">Account</a>
+                <a href="#">Media Centre</a>
+                <a href="#">Investor Relations</a>
+                <a href="#">Jobs</a>
+                <a href="#">Ways to Watch</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy</a>
+                <a href="#">Cookie Preferences</a>
+                <a href="#">Corporate Information</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Speed Test</a>
+                <a href="#">Legal Notices</a>
+                <a href="#">Only on Netflix</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
